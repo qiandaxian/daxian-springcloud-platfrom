@@ -2,8 +2,11 @@ package com.courier.api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.ComponentScan;
 
+
+@EnableDiscoveryClient
 @ComponentScan({"com.courier"})
 @SpringBootApplication
 public class ApiApplication {

@@ -31,15 +31,14 @@ public class ApiController {
 
         @RequestMapping("indexpage")
         public Result indexpage(){
-            //List<Apiconfig> all = apiconfigMapper.selectAll();
-
             PageInfo pageInfo = apiConfigService.selectPage(1,20,null);
             return ResultUtil.getSuccessResult(pageInfo);
         }
 
-    @RequestMapping("index")
-    public Result index(){
-        List<Apiconfig> apiconfigPageInfo = apiConfigService.select(null);
-        return ResultUtil.getSuccessResult(apiconfigPageInfo);
-    }
+
+        @RequestMapping("index")
+        public Result index(){
+            List<Apiconfig> apiconfigPageInfo = apiConfigService.select(null);
+            return ResultUtil.getSuccessResult(apiconfigPageInfo);
+        }
 }
