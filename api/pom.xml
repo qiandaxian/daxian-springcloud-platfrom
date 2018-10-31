@@ -25,7 +25,7 @@
         <!-- 模块间依赖 -->
         <dependency>
             <groupId>com.courier</groupId>
-            <artifactId>dao</artifactId>
+            <artifactId>service</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
@@ -34,11 +34,6 @@
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
-        <!-- 外部依赖 -->
-        <dependency>
-            <groupId>com.ctrip.framework.apollo</groupId>
-            <artifactId>apollo-client</artifactId>
-        </dependency>
     </dependencies>
 
     <build>

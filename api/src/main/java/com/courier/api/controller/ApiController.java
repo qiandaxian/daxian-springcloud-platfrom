@@ -1,13 +1,16 @@
-package com.courier.api;
+package com.courier.api.controller;
 
 
 import com.courier.db.entity.Apiconfig;
 import com.courier.db.mapper.ApiconfigMapper;
+import com.courier.redis.RedisConfig;
 import com.courier.sdk.core.Result;
 import com.courier.sdk.utils.ResultUtil;
+import com.courier.service.ApiConfigService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,22 +20,26 @@ import java.util.List;
 @RequestMapping("api")
 public class ApiController {
 
+        @Autowired
+        RedisConfig redisConfig;
+
+        @Value("${ip}")
+        private String ip;
 
         @Autowired
-        private ApiconfigMapper apiconfigMapper;
+        private ApiConfigService apiConfigService;
 
         @RequestMapping("indexpage")
         public Result indexpage(){
             //List<Apiconfig> all = apiconfigMapper.selectAll();
 
-            PageHelper.startPage(1,20);
-            PageInfo<Apiconfig> apiconfigPageInfo = new PageInfo<Apiconfig>(apiconfigMapper.selectAll());
-            return ResultUtil.getSuccessResult(apiconfigPageInfo);
+            PageInfo pageInfo = apiConfigService.selectPage(1,20,null);
+            return ResultUtil.getSuccessResult(pageInfo);
         }
 
     @RequestMapping("index")
     public Result index(){
-        List<Apiconfig> apiconfigPageInfo = apiconfigMapper.selectAll();
+        List<Apiconfig> apiconfigPageInfo = apiConfigService.select(null);
         return ResultUtil.getSuccessResult(apiconfigPageInfo);
     }
 }

@@ -6,7 +6,8 @@ import com.alibaba.fastjson.support.config.FastJsonConfig;
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
 import com.courier.sdk.core.Result;
 import com.courier.sdk.core.ResultCodeEnum;
-import com.google.protobuf.ServiceException;
+import com.courier.service.core.ServiceException;
+import com.ctrip.framework.apollo.spring.annotation.EnableApolloConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -36,6 +37,7 @@ import java.util.List;
  * @date 2018/10/31
  */
 @Configuration
+@EnableApolloConfig
 public class WebMvcConfigurer extends WebMvcConfigurerAdapter {
 
     private final Logger logger = LoggerFactory.getLogger(WebMvcConfigurer.class);
