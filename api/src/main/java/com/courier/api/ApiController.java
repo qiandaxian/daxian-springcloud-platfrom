@@ -21,8 +21,8 @@ public class ApiController {
         @Autowired
         private ApiconfigMapper apiconfigMapper;
 
-        @RequestMapping("index")
-        public Result index(){
+        @RequestMapping("indexpage")
+        public Result indexpage(){
             //List<Apiconfig> all = apiconfigMapper.selectAll();
 
             PageHelper.startPage(1,20);
@@ -30,4 +30,9 @@ public class ApiController {
             return ResultUtil.getSuccessResult(apiconfigPageInfo);
         }
 
+    @RequestMapping("index")
+    public Result index(){
+        List<Apiconfig> apiconfigPageInfo = apiconfigMapper.selectAll();
+        return ResultUtil.getSuccessResult(apiconfigPageInfo);
+    }
 }

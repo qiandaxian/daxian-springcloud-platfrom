@@ -12,8 +12,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Head {
-	//提示信息信息
-	private String msg;
 	//http标准状态码
 	private String code;
+	//提示信息信息
+	private String msg;
 }
