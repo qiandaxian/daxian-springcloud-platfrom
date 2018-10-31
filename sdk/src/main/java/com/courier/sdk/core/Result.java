@@ -39,6 +39,10 @@ public class Result extends JSONObject {
         return set("head",head);
     }
 
+    public Result setHead(String code,String desc) {
+        return set("head",new Head(code,desc));
+    }
+
     public Object getData() {
         return data;
     }
