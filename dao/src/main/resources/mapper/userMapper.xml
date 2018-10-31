@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.courier.db.mapper.UserMapper">
+  <resultMap id="BaseResultMap" type="com.courier.db.entity.User">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="jobNo" jdbcType="VARCHAR" property="jobno" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="nickname" jdbcType="VARCHAR" property="nickname" />
+    <result column="bankName" jdbcType="VARCHAR" property="bankname" />
+    <result column="bankBranchName" jdbcType="VARCHAR" property="bankbranchname" />
+    <result column="bankCardNo" jdbcType="VARCHAR" property="bankcardno" />
+    <result column="headPic" jdbcType="VARCHAR" property="headpic" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="orgCode" jdbcType="VARCHAR" property="orgcode" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="updateTime" jdbcType="TIMESTAMP" property="updatetime" />
+    <result column="bindPay" jdbcType="INTEGER" property="bindpay" />
+    <result column="jGPhone" jdbcType="VARCHAR" property="jgphone" />
+  </resultMap>
+</mapper>
